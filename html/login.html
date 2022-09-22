@@ -32,7 +32,7 @@
         <h1>Login</h1>
         <form action="#" onsubmit="return validateform() " name="myform">
             <div class="txt-field">
-                <input type="text" placeholder="User Name or Email" name="name" />
+                <input type="text" placeholder="User Name or Email" name="Email" />
             </div>
             <div class="txt-field">
                 <input type="text" placeholder="Password" name="password" />
@@ -44,13 +44,19 @@
     </div>
     <script>
         function validateform() {
-            var name = document.myform.name.value;
             var password = document.myform.password.value;
 
-            if (name == null || name == "") {
-                alert("Name can't be blank");
+            var emailID = document.myform.Email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                alert("Please enter correct email ID")
+                document.myform.Email.focus();
                 return false;
-            } else if (password.length < 6) {
+            }
+
+            else if (password.length < 6) {
                 alert("Password must be at least 6 characters long.");
                 return false;
             }
