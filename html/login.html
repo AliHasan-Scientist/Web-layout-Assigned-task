@@ -19,9 +19,9 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-       <a href="./index.html"><label class="logox" >Alfa</label></a>
-            <ul>
-            <li><a href="./index.html" target="_self" >Home</a></li>
+        <a href="./index.html"><label class="logox">Alfa</label></a>
+        <ul>
+            <li><a href="./index.html" target="_self">Home</a></li>
             <li><a href="./about.html" target="_self">About</a></li>
             <li><a href="./contact.html" target="_self">Contact</a></li>
             <li><a href="./login.html" class="activex" target="_self">Login</a></li>
@@ -30,17 +30,31 @@
     </nav>
     <div class="container">
         <h1>Login</h1>
-        <form action="#">
+        <form action="#" onsubmit="return validateform() " name="myform">
             <div class="txt-field">
-                <input type="text" required placeholder="User Name or Email" />
+                <input type="text" placeholder="User Name or Email" name="name" />
             </div>
             <div class="txt-field">
-                <input type="text" required placeholder="Password" />
+                <input type="text" placeholder="Password" name="password" />
             </div>
             <div class="pass_forget"><a href="#">Forget Password</a></div>
             <input type="submit" value="Login" />
             <div class="signup-link">Don't have a Account? <a href="#">Signup</a></div>
         </form>
     </div>
+    <script>
+        function validateform() {
+            var name = document.myform.name.value;
+            var password = document.myform.password.value;
+
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+                return false;
+            } else if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+        }  
+    </script>
 
 </html>
