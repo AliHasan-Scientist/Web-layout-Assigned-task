@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +9,38 @@
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+    <script src="../js/validate.js"></script>
 </head>
+
 <body>
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logox">Alfa</label>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
+       <a href="./index.html"><label class="logox" >Alfa</label></a>
+            <ul>
+            <li><a href="./index.html" target="_self" >Home</a></li>
+            <li><a href="./about.html" target="_self">About</a></li>
+            <li><a href="./contact.html" class="activex" target="_self">Contact</a></li>
+            <li><a href="./login.html" target="_self">Login</a></li>
 
         </ul>
     </nav>
-    <form class="form">
+    <form class="form" name="myForm" onsubmit="return(validate());">
         <h2>CONTACT US</h2>
-        <p type="Name:"><input placeholder="Write your name here.."></input></p>
-        <p type="Email:"><input placeholder="Let us know how to contact you back.."></input></p>
-        <p type="Message:"><input placeholder="What would you like to tell us.."></input></p>
-        <button>Send Message</button>
+        <p type="Name:"><input id="Name" placeholder="Write your name here.." name="Name"></input></p>
+        <span role="alert" id="nameError" aria-hidden="true">
+            Please enter First Name
+        </span>
+        <p type="Email:"><input placeholder="Let us know how to contact you back.." name="Email"></input></p>
+        <p type="Message:"><input placeholder="What would you like to tell us.." name="Message"></input></p>
+        <button id="submit">Send Message</button>
         <div>
-          <span class="fa fa-phone"></span>001 1023 567
-          <span class="fa fa-envelope-o"></span> contact@company.com
+            <span class="fa fa-phone"></span>001 1023 567
+            <span class="fa fa-envelope-o"></span> contact@company.com
         </div>
-      </form>
+    </form>
 </body>
+
 </html>

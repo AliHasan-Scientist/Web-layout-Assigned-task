@@ -84,3 +84,15 @@ div {
 span {
     margin: 0 5px 0 15px
 }
+#nameError {
+    display: none;
+    font-size: 0.8em;
+  }
+  
+  #nameError.visible {
+    display: block;
+  }
+  
+  input.invalid {
+    border-color: red;
+  }
