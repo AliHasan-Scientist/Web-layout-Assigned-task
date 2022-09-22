@@ -7,21 +7,7 @@ function validate() {
 
 
     }
-    var nameSize = document.myForm.Name.value;
-
-    if ( size>= 16) {
-        alert("Your name is to large!");
-        document.myForm.Name.focus();
-        return false;
-
-        
-    }
-    if (document.myForm.Email.value == "") {
-        alert("Please provide your Email!");
-        document.myForm.EMail.focus();
-
-        return false;
-    }
+       
     var emailID = document.myForm.Email.value;
     atpos = emailID.indexOf("@");
     dotpos = emailID.lastIndexOf(".");
@@ -31,14 +17,7 @@ function validate() {
         document.myForm.Email.focus();
         return false;
     }
-    return (true);
-    if (!document.myForm.Name.value) {
-        const nameError = document.getElementById("nameError");
-        nameError.classList.add("visible");
-        firstNameField.classList.add("invalid");
-        nameError.setAttribute("aria-hidden", false);
-        nameError.setAttribute("aria-invalid", true);
-      }
+   
 
 
 
