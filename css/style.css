@@ -102,6 +102,12 @@ a:hover {
 @media (max-width: 858px) {
   .checkbtn {
     display: block;
+    
+  }
+  .content h2 {
+   font-size:small;
+   box-sizing: border-box;
+  
   }
 
   ul {
@@ -261,11 +267,11 @@ section button:hover {
 
 .content h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 2px #f003f4;
+  -webkit-text-stroke: 2px #0b7595;
 }
 
 .content h2:nth-child(2) {
-  color: #d313da;
+  color: #031a41;
   animation: animate 4s ease-in-out infinite;
 }
 
