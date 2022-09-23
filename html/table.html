@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa | Users</title>
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- nav -->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <a href="./index.html" class="logox">Alfa</a>
+        <ul>
+            <li><a class="activex" href="./index.html" target="_self">Home</a></li>
+            <li><a href="./about.html" target="_self">About</a></li>
+            <li><a href="./contact.html" target="_self">Contact</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Services</button>
+                <div class="dropdown-content">
+                    <a href="./table.html">Users</a>
+                    <a href="#">Content</a>
+                    <a href="#">Gallery</a>
+                </div>
+            </div>
+            <li><a href="./login.html" target="_self">Login</a></li>
+
+        </ul>
+
+    </nav>
+    <h2>Our Users Details</h2>
+    <div class="table-wrapper">
+        <table class="fl-table" id="user-table">
+            <thead>
+                <tr>
+                    <th>Sr.no #</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content 1</td>
+                    <td>Content 1</td>
+                    <td>Content 1</td>
+                    <td>Content 1</td>
+                    <td>Content 1</td>
+                </tr>
+                <tr>
+                    <td>Content 2</td>
+                    <td>Content 2</td>
+                    <td>Content 2</td>
+                    <td>Content 2</td>
+                    <td>Content 2</td>
+                </tr>
+                <tr>
+                    <td>Content 3</td>
+                    <td>Content 3</td>
+                    <td>Content 3</td>
+                    <td>Content 3</td>
+                    <td>Content 3</td>
+                </tr>
+                <tr>
+                    <td>Content 4</td>
+                    <td>Content 4</td>
+                    <td>Content 4</td>
+                    <td>Content 4</td>
+                    <td>Content 4</td>
+                </tr>
+                <tr>
+                    <td>Content 5</td>
+                    <td>Content 5</td>
+                    <td>Content 5</td>
+                    <td>Content 5</td>
+                    <td>Content 5</td>
+                </tr>
+                <tr>
+                    <td>Content 6</td>
+                    <td>Content 6</td>
+                    <td>Content 6</td>
+                    <td>Content 6</td>
+                    <td>Content 6</td>
+                </tr>
+                <tr>
+                    <td>Content 7</td>
+                    <td>Content 7</td>
+                    <td>Content 7</td>
+                    <td>Content 7</td>
+                    <td>Content 7</td>
+                </tr>
+                <tr>
+                    <td>Content 8</td>
+                    <td>Content 8</td>
+                    <td>Content 8</td>
+                    <td>Content 8</td>
+                    <td>Content 8</td>
+                </tr>
+                <tr>
+                    <td>Content 9</td>
+                    <td>Content 9</td>
+                    <td>Content 9</td>
+                    <td>Content 9</td>
+                    <td>Content 9</td>
+                </tr>
+                <tr>
+                    <td>Content 10</td>
+                    <td>Content 10</td>
+                    <td>Content 10</td>
+                    <td>Content 10</td>
+                    <td>Content 10</td>
+                </tr>
+            <tbody>
+        </table>
+
+    </div>
+    <script type="text/javascript">
+        const users = document.querySelector("#user-table >tbody");
+        console.log(users);
+
+        function loadUsers() {
+            const request = new XMLHttpRequest();
+            request.open('get', '../data/Users.json');
+            request.onload = () => {
+                try {
+                    const json = JSON.parse(request.responseText);
+                    IterateUsers(json);
+                }
+                catch (e) {
+                    console.warn("could not load users")
+                }
+
+            };
+            request.send();
+
+        }
+        function IterateUsers(json) {
+
+            while (users.firstChild) {
+                users.removeChild(users.firstChild);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+
+        })
+    loadUsers();
+    </script>
+</body>
+
+</html>
