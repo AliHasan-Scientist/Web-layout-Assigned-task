@@ -12,55 +12,47 @@
 
 </head>
 
-<body>
+<body onload='document.form.email.focus() ; document.form.password.focus()'>
     <!-- nav -->
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <a href="./index.html"><label class="logox">Alfa</label></a>
+        <a href="./index.html" class="logox">Alfa</a>
         <ul>
             <li><a href="./index.html" target="_self">Home</a></li>
             <li><a href="./about.html" target="_self">About</a></li>
             <li><a href="./contact.html" target="_self">Contact</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Services</button>
+                <div class="dropdown-content">
+                  <a href="#">Inventery</a>
+                  <a href="#">Content</a>
+                  <a href="#">Gallery</a>
+                </div>
+              </div>
             <li><a href="./login.html" class="activex" target="_self">Login</a></li>
 
         </ul>
     </nav>
     <div class="container">
         <h1>Login</h1>
-        <form action="#" onsubmit="return validateform() " name="myform">
+        <form class="form" action="#" name="form">
             <div class="txt-field">
-                <input type="text" placeholder="User Name or Email" name="Email" />
+                <input type="text" placeholder="User Name or Email" name="email" />
             </div>
             <div class="txt-field">
                 <input type="text" placeholder="Password" name="password" />
             </div>
             <div class="pass_forget"><a href="#">Forget Password</a></div>
-            <input type="submit" value="Login" />
+            <input type="submit" name="submit" value="Login"
+                onclick="ValidateEmail(document.form.email) ; CheckPassword(document.form.password) " />
             <div class="signup-link">Don't have a Account? <a href="#">Signup</a></div>
         </form>
     </div>
-    <script>
-        function validateform() {
-            var password = document.myform.password.value;
 
-            var emailID = document.myform.Email.value;
-            atpos = emailID.indexOf("@");
-            dotpos = emailID.lastIndexOf(".");
-
-            if (atpos < 1 || (dotpos - atpos < 2)) {
-                alert("Please enter correct email ID")
-                document.myform.Email.focus();
-                return false;
-            }
-
-            else if (password.length < 6) {
-                alert("Password must be at least 6 characters long.");
-                return false;
-            }
-        }  
-    </script>
+    <script src="../js/MailValidation.js"></script>
+    <script src="../js/PasswordValidation.js"></script>
 
 </html>

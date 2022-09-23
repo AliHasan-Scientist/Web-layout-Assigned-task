@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -14,7 +13,7 @@ body {
 
 .container {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -93,4 +92,12 @@ input[type="submit"]:active
 }
 .signup-link a:hover {
   text-decoration: underline;
+}
+@media (max-width: 858px) {
+  .container {
+    max-height: 26rem;
+    margin-top: 4.5rem;
+    z-index: -1;
+  }
+
 }
