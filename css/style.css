@@ -227,3 +227,6 @@ section button:hover {
 .dropdown:hover .dropbtn {
   background-color: #1b9bff;
 }
+.signup:hover{
+  background-color: transparent;
+}
