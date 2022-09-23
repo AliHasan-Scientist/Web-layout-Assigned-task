@@ -147,11 +147,21 @@
             while (users.firstChild) {
                 users.removeChild(users.firstChild);
             }
+            json.forEach(element => {
+                const tr = document.createElement("tr")
+                element.forEach((cell) => {
+                    const td = document.createElement("td");
+                    td.textContent=cell;
+                    tr.appendChild(td)
+                })
+                users.appendChild(tr);
+
+            });
         }
         document.addEventListener("DOMContentLoaded", () => {
 
         })
-    loadUsers();
+        loadUsers();
     </script>
 </body>
 
